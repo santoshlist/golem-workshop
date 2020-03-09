@@ -1,0 +1,10 @@
+name: Linting
+on: [push, pull_request]
+jobs:
+  markdown:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Lint all markdown files
+      uses: avto-dev/markdown-lint@v1
+      with:
+       args: '/home/runner/work/golem-workshop/golem-workshop'
