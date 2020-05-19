@@ -32,8 +32,6 @@ spec:
                       values:
                         - web-application
                 topologyKey: "kubernetes.io/hostname"
-      nodeSelector:
-        storagetype: ssd
       terminationGracePeriodSeconds: 60
       containers:
         - name: web-application
@@ -66,22 +64,6 @@ spec:
               port: http
             timeoutSeconds: 1
             failureThreshold: 3
-        - name: prometheus-pushgateway
-          image: prom/pushgateway:v0.8.0
-          resources:
-            requests:
-              cpu: 10m
-              memory: 32Mi
-            limits:
-              memory: 512Mi
-              cpu: 500m
-          ports:
-            - containerPort: 9091
-              name: metrics
-          livenessProbe:
-            httpGet:
-              path: /
-              port: metrics
       volumes:
         - name: web-application-secret
           secret:
