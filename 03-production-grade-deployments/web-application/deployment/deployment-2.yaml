@@ -20,6 +20,19 @@ spec:
         app: web-application
         workshop: workshop
     spec:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 1
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: "app"
+                      operator: In
+                      values:
+                        - web-application
+                topologyKey: "kubernetes.io/hostname"
+      terminationGracePeriodSeconds: 60
       containers:
         - name: web-application
           image: syseleven/k8s-workshop-web-application:1.0.0
