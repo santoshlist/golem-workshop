@@ -24,5 +24,5 @@ helm upgrade --install external-dns --namespace=external-dns -f values.yaml stab
 * Deploy nginx test with dns entry:
 
 ```sh
-kubectl apply -f nginx-test.yaml --namespace web-application
+kubectl apply -f nginx-test.yaml --namespace YOUR_NAMESPACE
 ```
