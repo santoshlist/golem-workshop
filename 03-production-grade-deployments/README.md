@@ -3,7 +3,7 @@
 * Deploy application
 
 ```sh
-kubectl apply -f web-application/deployment/
+kubectl apply -f web-application/deployment/deployment.yaml -f web-application/deployment/service.yaml
 ```
 
 * Check pods and figure out why pods are pending
@@ -24,6 +24,18 @@ kubectl label nodes --all storagetype=ssd
 
 ```sh
 kubectl get pods
+```
+
+* Update deployment
+
+```sh
+kubectl apply -f web-application/deployment/deployment-2.yaml
+```
+
+* Add PodDisruptionBudget
+
+```sh
+kubectl apply -f web-application/deployment/pdb.yaml
 ```
 
 * Create autoscaler

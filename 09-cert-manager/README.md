@@ -35,30 +35,8 @@ kubectl apply -f route53/credentials-secret.yaml
 kubectl apply -f route53/clusterissuer.yaml
 ```
 
-* Change hostnames in `certificate.yaml`
 * Create wildcard certificate
 
 ```sh
 kubectl apply -f route53/certificate.yaml
-```
-
-## Configuration for designate
-
-* Clone the designate certmanger repository and follow the install instructions
-
-```sh
-git clone git@github.com:syseleven/designate-certmanager-webhook.git
-```
-
-* Create ClusterIssuer
-
-```sh
-kubectl apply -f designate/clusterissuer.yaml
-```
-
-* Change hostnames in `certificate.yaml`
-* Create wildcard certificate
-
-```sh
-kubectl apply -f designate/certificate.yaml
 ```

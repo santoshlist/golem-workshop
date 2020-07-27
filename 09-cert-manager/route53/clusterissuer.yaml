@@ -14,7 +14,7 @@ spec:
     solvers:
       - dns01:
           route53:
-            accessKeyID: XXXXXXXX
+            accessKeyID: CHANGEME
             region: eu-central-1
             secretAccessKeySecretRef:
               key: secret-access-key
