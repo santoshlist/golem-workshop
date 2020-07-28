@@ -7,3 +7,4 @@ vendor
 *.tfstate.backup
 *.rkestate
 kube_config_cluster.yml
+please-don't-try-this-at-home
