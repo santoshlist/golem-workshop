@@ -19,7 +19,7 @@ If you don’t have docker installed, you can use `syseleven/exercise-app:1.0.0`
 ## Deploy the exercise app
 
 1. Create a Deployment
-2. Create a Service of type ClusterIP (no external LoadBalancer)
+2. Create a Service of type LoadBalancer
 3. Create a ConfigMap with a USERNAME and inject it into the Deployment as an environment variable
 
 ## Improving the exercise app
